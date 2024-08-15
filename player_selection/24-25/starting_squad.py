@@ -97,12 +97,12 @@ def add_past_season_rois(upcoming_season_players: pd.DataFrame, past_season_play
         A pandas DataFrame containing the upcoming season player data with the past season player ROI data added.
     """
     upcoming_season_players = upcoming_season_players.merge(
-        past_season_player_rois[['name', 'player_ROI']],
+        past_season_player_rois[['name', 'player_ROI', 'total_points']],
         on='name',
         how='left'
     )
 
-    upcoming_season_players.rename(columns={'player_ROI': 'past_season_player_ROI'}, inplace=True)
+    upcoming_season_players.rename(columns={'player_ROI': 'past_season_player_ROI', 'total_points': 'past_season_total_points'}, inplace=True)
     upcoming_season_players.sort_values('past_season_player_ROI', ascending=False, inplace=True)
     
 
@@ -194,14 +194,18 @@ if __name__ == '__main__':
             'position': player_data.position,
             'cost': player_data.now_cost,
             'selected_by_percent': player_data.selected_by_percent,
-            'past_season_player_ROI': player_data.past_season_player_ROI
+            'past_season_player_ROI': player_data.past_season_player_ROI,
+            'past_season_total_points': player_data.past_season_total_points
+        
         })
 
         budget -= player_data.now_cost
         team_counts[player_data.team_code] += 1
         position_counts[player_data.position] += 1
-
-    print(pd.DataFrame(team).sort_values('position', ascending=False))
+    
+    team = pd.DataFrame(team).sort_values('position', ascending=False)
+    print(team)
+    team.to_csv('data/24-25/starting_squad.csv', index=False)
 
 
 
