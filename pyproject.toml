@@ -11,7 +11,8 @@ authors = ["Alfie Grace <unexposed-email@email.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-requests = "^2.32"
+pandas = "^2.2"
+polars = "^1.5"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.3"
