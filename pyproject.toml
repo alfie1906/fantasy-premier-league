@@ -13,6 +13,7 @@ authors = ["Alfie Grace <unexposed-email@email.com>"]
 python = "^3.9"
 pandas = "^2.2"
 polars = "^1.5"
+seaborn = "^0.13"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.3"
