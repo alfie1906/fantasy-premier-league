@@ -4,6 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "fantasy-premier-league"
+package-mode = false
 version = "1.0.0"
 description = "Not a real package, just using Poetry for environment management."
 authors = ["Alfie Grace <unexposed-email@email.com>"]
