@@ -1,4 +1,5 @@
 # local dev
+poetry.lock
 
 # data
 data/
