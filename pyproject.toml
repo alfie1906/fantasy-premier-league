@@ -1,0 +1,16 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "fantasy-premier-league"
+version = "1.0.0"
+description = "Not a real package, just using Poetry for environment management."
+authors = ["Alfie Grace <unexposed-email@email.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.32"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.3"
