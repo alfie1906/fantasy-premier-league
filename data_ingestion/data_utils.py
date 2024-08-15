@@ -1,11 +1,10 @@
 import ssl
 
 import pandas as pd
-import polars as pl
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
-def get_github_data(url: str) -> pl.DataFrame:
+def get_github_data(url: str) -> pd.DataFrame:
     """
     Function for pulling data from a GitHub CSV into a Polars DataFrame.
 
@@ -16,10 +15,10 @@ def get_github_data(url: str) -> pl.DataFrame:
 
     Returns
     -------
-    pl.DataFrame
+    pd.DataFrame
         A Polars DataFrame containing the data from the CSV file.
     """
     url += "?raw=true"
-    data = pd.read_csv(url, index_col=0)
+    data = pd.read_csv(url)
 
-    return pl.from_pandas(data)
+    return data
