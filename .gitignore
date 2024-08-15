@@ -1,5 +1,6 @@
 # local dev
 poetry.lock
+__pycache__/
 
 # data
 data/
